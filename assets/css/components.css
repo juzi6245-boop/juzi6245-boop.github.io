@@ -1,0 +1,315 @@
+/* components.css · 作品集视觉组件（打印层与网页层共用；尺寸用 em，随各层基准字号缩放）----
+   这些是"图"：时间线 / 流程 / 四层兜底 / 漏斗 / 三个率 / 角色四栏 / 改前改后对比 / 五步
+   颜色全部取自 tokens.css，零外部资源
+------------------------------------------------------------------------------- */
+
+/* 细线表格 */
+.table{ width:100%; border-collapse:collapse; font-size:.92em; }
+.table th,.table td{ text-align:left; padding:.5em .7em; border-bottom:1px solid var(--line-soft); vertical-align:top; line-height:1.6; }
+.table th{ font-weight:400; font-size:.82em; letter-spacing:.1em; color:var(--ink-3); border-bottom:1px solid var(--line); }
+.table tr:last-child td{ border-bottom:0; }
+.table td:first-child{ white-space:nowrap; color:var(--ink); }
+.table .num{ font-family:var(--serif); font-size:1.02em; }
+
+/* 时间线 */
+.timeline{ display:flex; position:relative; margin:.2em 0 1.1em; }
+.timeline::before{ content:""; position:absolute; left:0; right:0; top:.42em; height:1px; background:var(--line); }
+.tl{ position:relative; flex:1; text-align:center; padding-top:1.4em; font-size:.8em; line-height:1.5; color:var(--ink-2); }
+.tl::before{ content:""; position:absolute; top:.13em; left:50%; transform:translateX(-50%); width:.6em; height:.6em; border-radius:50%; background:var(--paper); border:1px solid var(--rose); }
+.tl b{ display:block; font-family:var(--serif); font-size:1.06em; font-weight:400; color:var(--ink); }
+
+/* 流程（横向节点 ＋ 箭头；可多行） */
+.flow{ display:flex; flex-direction:column; gap:.5em; }
+.flow-row{ display:flex; align-items:stretch; }
+.fnode{ flex:1; border:1px solid var(--line-soft); border-radius:.45em; background:var(--card); padding:.5em .45em; font-size:.78em; line-height:1.45; text-align:center; color:var(--ink-2); }
+.fnode b{ display:block; font-family:var(--serif); font-weight:400; font-size:.95em; color:var(--rose-deep); margin-bottom:.15em; }
+.fnode .k{ display:block; font-size:.86em; color:var(--ink-3); margin-top:.15em; }
+.farrow{ display:flex; align-items:center; padding:0 .28em; color:var(--rose); font-size:.85em; }
+.flow-down{ text-align:center; color:var(--rose); font-size:.9em; line-height:1; }
+
+/* 四层兜底 / 阶梯 */
+.ladder{ display:flex; flex-direction:column; gap:.3em; }
+.lrow{ display:flex; align-items:center; gap:.6em; border-left:2px solid var(--rose); background:linear-gradient(90deg, var(--rose-tint), transparent 68%); padding:.36em .7em; border-radius:2px; font-size:.85em; line-height:1.5; color:var(--ink-2); }
+.lrow i{ font-family:var(--serif); font-style:normal; color:var(--rose-deep); width:1.1em; flex:none; }
+
+/* 漏斗 */
+.funnel{ display:flex; flex-direction:column; gap:.45em; }
+.funnel .frow{ display:flex; align-items:center; gap:.7em; font-size:.85em; }
+.funnel .cap{ width:6.4em; flex:none; color:var(--ink-3); }
+.funnel .track{ flex:1; height:1.6em; background:var(--line-soft); border-radius:.3em; overflow:hidden; }
+.funnel .track i{ display:block; height:100%; background:linear-gradient(90deg, rgba(194,152,159,.95), rgba(234,217,220,.85)); }
+.funnel .val{ width:5.6em; flex:none; text-align:right; font-family:var(--serif); font-size:1.06em; color:var(--ink); }
+
+/* 三个率 */
+.rates{ display:flex; gap:.8em; }
+.rate{ flex:1; border-top:1px solid var(--line); padding-top:.5em; }
+.rate b{ display:block; font-family:var(--serif); font-weight:400; font-size:1.42em; line-height:1.2; }
+.rate .bar{ height:.28em; background:var(--rose-soft); border-radius:999px; margin:.42em 0 .38em; }
+.rate .bar i{ display:block; height:100%; background:linear-gradient(90deg, var(--rose), var(--rose-deep)); border-radius:999px; }
+.rate span{ display:block; font-size:.74em; line-height:1.5; color:var(--ink-3); }
+
+/* 角色四栏 */
+.role-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:.55em; }
+.role{ border:1px solid var(--line-soft); border-radius:.45em; background:var(--card); padding:.55em .7em; }
+.role b{ display:block; font-family:var(--serif); font-weight:400; font-size:.95em; margin-bottom:.28em; }
+.role span{ font-size:.76em; line-height:1.55; color:var(--ink-2); }
+.role--me{ border-color:var(--rose); background:linear-gradient(180deg, var(--rose-tint), transparent 82%); }
+.role--me b{ color:var(--rose-deep); }
+
+/* 改前 / 改后 对比 */
+.vs{ display:grid; grid-template-columns:1fr 1fr; gap:.65em; }
+.vs-panel{ border:1px solid var(--line-soft); border-radius:.45em; padding:.65em .8em; font-size:.82em; line-height:1.62; color:var(--ink-2); }
+.vs-panel h4{ margin:0 0 .3em; font-family:var(--serif); font-weight:400; font-size:1em; color:var(--ink-3); letter-spacing:.06em; }
+.vs-panel--after{ border-color:var(--rose); background:linear-gradient(180deg, var(--rose-tint), transparent 80%); }
+.vs-panel--after h4{ color:var(--rose-deep); }
+
+/* 五步 / 多步条 */
+.chainsteps{ display:flex; align-items:stretch; }
+.step{ flex:1; border:1px solid var(--line-soft); border-radius:.45em; background:var(--card); padding:.5em .5em; font-size:.75em; line-height:1.45; color:var(--ink-2); }
+.step i{ display:block; font-family:var(--serif); font-style:normal; color:var(--rose-deep); margin-bottom:.18em; }
+.step-arrow{ display:flex; align-items:center; color:var(--rose); padding:0 .12em; font-size:.82em; }
+
+/* 小标签 */
+.tag{ display:inline-block; font-size:.72em; letter-spacing:.08em; color:var(--rose-deep); border:1px solid var(--rose-soft); border-radius:999px; padding:.1em .7em; margin-right:.4em; }
+/* 四层兜底的两列排法 */
+.ladder--two{ display:grid; grid-template-columns:1fr 1fr; gap:.34em .5em; }
+
+/* 能力卡（三列） */
+.caps{ display:grid; grid-template-columns:repeat(3,1fr); gap:.6em .8em; }
+.cap{ border-top:1px solid var(--line); padding-top:.45em; }
+.cap b{ display:block; font-family:var(--serif); font-weight:400; font-size:.98em; margin-bottom:.18em; }
+.cap span{ font-size:.75em; line-height:1.55; color:var(--ink-2); }
+
+/* ---------------------------------------------------------------------------
+   v3 追加：图组件（打印层与网页层共用；零外部资源、纯 CSS）
+   --------------------------------------------------------------------------- */
+
+/* 图注 + 图位容器（示意图与真截图共用同一槽位，换图不重排） */
+.figcap{ margin-top:1.8mm; font-size:9pt; line-height:1.55; color:var(--ink-3); }
+.figbox{ border:1px solid var(--line-soft); border-radius:3px; background:var(--card); overflow:hidden; }
+
+/* 项目形态小图标（项目总览页 · 与时间线同宽对齐） */
+.glyphrow{ display:flex; margin:2mm 0 1mm; }
+.glyphrow .glyph{ flex:1; height:11mm; display:flex; align-items:center; justify-content:center; gap:1.4mm; }
+.glyph--board{ align-items:flex-end; padding-bottom:1.6mm; }
+.glyph--board i{ display:block; width:3.2mm; border-radius:1px; background:var(--rose-soft); }
+.glyph--board i:nth-child(1){ height:4mm; }
+.glyph--board i:nth-child(2){ height:7.2mm; background:var(--rose); }
+.glyph--board i:nth-child(3){ height:5.4mm; }
+.glyph--flow i{ display:block; width:3mm; height:3mm; border:1px solid var(--rose); border-radius:1px; }
+.glyph--flow b{ display:block; width:4.2mm; height:1px; background:var(--line); }
+.glyph--loop i{ display:block; width:8mm; height:8mm; border:1px solid var(--rose); border-radius:50%; position:relative; }
+.glyph--loop i::after{ content:"\21BB"; position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:10pt; line-height:1; color:var(--rose-deep); }
+
+/* 一日节奏对比条（项目一：人工 vs 系统） */
+.daybar{ display:flex; flex-direction:column; gap:1.6mm; }
+.daybar-scale{ display:flex; justify-content:space-between; padding-left:16mm; font-size:8pt; letter-spacing:.04em; color:var(--ink-3); }
+.dayrow{ display:flex; align-items:center; gap:3mm; }
+.dayrow .who{ width:13mm; flex:none; text-align:right; font-size:9.5pt; color:var(--ink-3); }
+.dayrow .track{ position:relative; flex:1; height:8.4mm; border:1px solid var(--line-soft); border-radius:2px;
+  background-image:repeating-linear-gradient(90deg, rgba(46,42,40,.13) 0 1px, transparent 1px 4.1667%), linear-gradient(180deg, var(--paper-2), var(--card)); }
+.dayrow .blk{ position:absolute; top:.7mm; bottom:.7mm; display:flex; align-items:center; justify-content:center;
+  border-radius:2px; font-size:8pt; line-height:1; padding:0 1mm; white-space:nowrap; }
+.blk--manual{ background:linear-gradient(180deg, var(--rose), var(--rose-deep)); color:#fff; }
+.blk--auto{ background:var(--card); border:1px solid var(--rose-soft); color:var(--ink-2); }
+.blk--human{ background:var(--paper); border:1px solid var(--rose); color:var(--rose-deep); }
+/* 界面结构线框示意（看板） */
+.mock-bar{ display:flex; align-items:center; gap:2mm; padding:2mm 3mm;
+  background:linear-gradient(180deg, var(--paper-2), var(--card)); border-bottom:1px solid var(--line-soft); }
+.mock-dot{ width:2.2mm; height:2.2mm; border-radius:50%; background:var(--line); flex:none; }
+.mock-url{ flex:1; height:5.4mm; display:flex; align-items:center; padding-left:3mm; border-radius:999px;
+  background:var(--paper-2); font-size:8.5pt; letter-spacing:.04em; color:var(--ink-3); }
+.mock-bell{ display:flex; align-items:center; gap:1.4mm; font-size:8.5pt; color:var(--ink-3); flex:none; }
+.mock-bell i{ display:block; width:2.4mm; height:2.4mm; border-radius:50%; background:var(--rose-deep); }
+.mock-body{ padding:3mm 4mm 4mm; display:flex; flex-direction:column; gap:2.6mm; }
+.mock-cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:2.6mm; }
+.mock-card{ border:1px solid var(--line-soft); border-radius:3px; padding:2mm 2.6mm;
+  background:linear-gradient(180deg, #fff, var(--paper)); }
+.mock-card b{ display:block; font-family:var(--serif); font-weight:400; font-size:14pt; line-height:1.25; }
+.mock-card span{ display:block; font-size:8pt; letter-spacing:.04em; color:var(--ink-3); }
+.mock-chips{ display:flex; flex-wrap:wrap; gap:1.6mm; }
+.mock-chip{ font-size:8pt; border:1px solid var(--line-soft); border-radius:999px; padding:.4mm 2.4mm; color:var(--ink-2); }
+.mock-chip--on{ border-color:var(--rose); background:var(--rose-tint); color:var(--rose-deep); }
+.mock-rows{ display:flex; flex-direction:column; }
+.mock-row{ display:flex; align-items:center; gap:3mm; padding:1.8mm 0; border-top:1px solid var(--line-soft); }
+.mock-row .t{ flex:1; display:flex; align-items:center; }
+.mock-row .t i{ display:block; height:2.1mm; border-radius:999px; background:var(--line-soft); }
+.mock-row .amt{ flex:none; font-size:8.5pt; color:var(--ink-3); }
+.mock-row .src{ flex:none; padding-left:3mm; border-left:1px solid var(--line-soft); font-size:8.5pt; color:var(--ink-3); }
+.mock-legend{ display:flex; flex-wrap:wrap; gap:1.6mm 5mm; padding-top:2mm; border-top:1px solid var(--line-soft);
+  font-size:8.5pt; line-height:1.5; color:var(--ink-3); }
+.mock-legend b{ font-weight:400; color:var(--ink-2); }
+
+/* 取舍决策图 */
+.tradeoff{ display:grid; grid-template-columns:1fr 12mm 1fr; align-items:stretch; }
+.tr-card{ border:1px solid var(--line-soft); border-radius:3px; padding:2.6mm 3mm; font-size:10pt; line-height:1.62; color:var(--ink-2); }
+.tr-card h4{ margin:0 0 1.4mm; font-family:var(--serif); font-weight:400; font-size:11pt; color:var(--ink-3); }
+.tr-card--pick{ border-color:var(--rose); background:linear-gradient(180deg, var(--rose-tint), transparent 82%); }
+.tr-card--pick h4{ color:var(--rose-deep); }
+.tr-arrow{ display:flex; align-items:center; justify-content:center; color:var(--rose); font-size:13pt; }
+
+/* 输入 -> 输出 对照图 */
+.io{ display:grid; grid-template-columns:1fr 11mm 1.08fr; align-items:stretch; }
+.io-panel{ border:1px solid var(--line-soft); border-radius:3px; background:var(--card); padding:2.6mm 3mm; }
+.io-panel h4{ margin:0 0 2mm; font-family:var(--serif); font-weight:400; font-size:10.5pt; letter-spacing:.06em; color:var(--ink-3); }
+.io-arrow{ display:flex; align-items:center; justify-content:center; color:var(--rose); font-size:13pt; }
+.shot{ height:30mm; display:flex; align-items:center; justify-content:center; border:1px dashed var(--line); border-radius:2px;
+  background:repeating-linear-gradient(135deg, rgba(46,42,40,.035) 0 3mm, transparent 3mm 6mm);
+  font-size:9pt; letter-spacing:.04em; color:var(--ink-3); }
+
+/* 知识库结构（14 份：模板 6 ＋ 资质图片 8） */
+.kb{ margin-top:2mm; }
+.kb-line{ display:flex; align-items:baseline; gap:2.5mm; margin-bottom:1.4mm; }
+.kb-line b{ flex:none; font-family:var(--serif); font-weight:400; font-size:10pt; color:var(--rose-deep); }
+.kb-line span{ font-size:8.5pt; color:var(--ink-3); }
+.kb-grid{ display:grid; grid-template-columns:repeat(6,1fr); gap:1.4mm; }
+.kb-grid i{ font-style:normal; font-size:7.5pt; line-height:1.3; text-align:center; padding:1.5mm .6mm;
+  border:1px solid var(--line-soft); border-radius:2px; background:var(--card); color:var(--ink-2); }
+
+/* 四问红绿灯 */
+.lights{ display:grid; grid-template-columns:repeat(4,1fr); gap:3.4mm; }
+.light{ border-top:1px solid var(--line); padding-top:2.2mm; }
+.light .lamp{ display:block; width:5mm; height:5mm; border-radius:50%; margin-bottom:2mm; border:1px solid var(--line); }
+.light--pass .lamp{ background:var(--sage); border-color:transparent; }
+.light--fail .lamp{ background:var(--rose-deep); border-color:transparent; }
+.light--part .lamp{ background:var(--card); border-color:var(--rose-deep); border-width:1.2mm; }
+.light--cond .lamp{ background:var(--card); border-color:var(--ink-3); }
+.light b{ display:block; font-family:var(--serif); font-weight:400; font-size:11pt; margin-bottom:.6mm; }
+.light .st{ display:block; font-size:8.5pt; letter-spacing:.06em; color:var(--ink-3); margin-bottom:1mm; }
+.light p{ margin:0; font-size:9.5pt; line-height:1.5; color:var(--ink-2); }
+
+/* Excel 写回示意 */
+.xl{ border:1px solid var(--line-soft); border-radius:3px; overflow:hidden; }
+.xl-row{ display:grid; grid-template-columns:9mm 1fr 40mm; }
+.xl-row > *{ padding:1.5mm 2mm; border-top:1px solid var(--line-soft); font-size:8.5pt; }
+.xl-row:first-child > *{ border-top:0; }
+.xl-head > *{ background:var(--paper-2); color:var(--ink-3); letter-spacing:.06em; font-size:8pt; }
+.xl-out{ background:linear-gradient(90deg, var(--rose-tint), transparent 88%); }
+.xl .bar{ display:block; height:2mm; border-radius:999px; background:var(--line-soft); }
+.xl .bar--out{ background:linear-gradient(90deg, var(--rose), var(--rose-soft)); }
+
+/* 能力 x 项目 矩阵 */
+.matrix{ width:100%; border-collapse:collapse; }
+.matrix th,.matrix td{ padding:1.7mm 2mm; border-bottom:1px solid var(--line-soft); text-align:left; font-size:10pt; color:var(--ink-2); }
+.matrix th{ font-weight:400; font-size:8pt; letter-spacing:.08em; color:var(--ink-3); }
+.matrix th.c,.matrix td.c{ text-align:center; width:24mm; }
+.matrix td:first-child{ color:var(--ink); }
+.matrix .on{ color:var(--rose-deep); font-size:12pt; line-height:1; }
+.matrix .off{ color:var(--line); font-size:10pt; line-height:1; }
+/* 确认单 / 成稿 小样张（示意） */
+.doc{ border:1px solid var(--line-soft); border-radius:2px; padding:2.2mm 2.6mm; background:linear-gradient(180deg,#fff,var(--paper)); }
+.doc-row{ display:flex; align-items:center; gap:2.4mm; padding:1mm 0; border-top:1px solid var(--line-soft); }
+.doc-row:first-of-type{ border-top:0; }
+.doc-row .n{ flex:none; width:5mm; font-size:8pt; color:var(--ink-3); }
+.doc-row .t{ flex:1; display:flex; align-items:center; }
+.doc-row .t i{ display:block; height:2mm; border-radius:999px; background:var(--line-soft); }
+.doc-row .s{ flex:none; font-size:8pt; color:var(--ink-2); }
+.io-out{ margin-top:2mm; font-size:8.5pt; line-height:1.5; color:var(--ink-3); }
+
+/* v3 微调：给一页塞得下留余量（不改上面组件的默认值） */
+.matrix--tight th,.matrix--tight td{ padding:1.05mm 2mm; font-size:9.5pt; }
+
+/* v3 微调之二 */
+.list.list--tight li{ padding:1.2mm 0; }
+.io--tight .io-panel{ padding:1.4mm 2.6mm; }
+/* v3.1 追加：形态图标（读表写回）＋ 角色归属标签 ＋ 追问 Q&A */
+.glyph--sheet{ display:grid; grid-template-columns:repeat(3,2.7mm); gap:1mm; }
+.glyph--sheet i{ display:block; height:2.7mm; border:1px solid var(--line); border-radius:1px; background:var(--card); }
+.glyph--sheet i.on{ border-color:var(--rose); background:var(--rose-soft); }
+
+.own{ display:inline-block; font-style:normal; font-size:7pt; letter-spacing:.08em; color:var(--ink-3);
+  border:1px solid var(--line-soft); border-radius:999px; padding:.05em .7em; margin-bottom:.4em; }
+.own--ai{ color:var(--ink-2); background:var(--paper-2); border-color:transparent; }
+
+.qa{ display:grid; grid-template-columns:1fr 1fr; gap:0 7mm; }
+.qa-item{ padding:2mm 0; border-bottom:1px solid var(--line-soft); }
+.qa-item q{ display:block; font-family:var(--serif); font-size:10.5pt; color:var(--ink); margin-bottom:.8mm; }
+.qa-item q::before{ content:"Q "; color:var(--rose-deep); }
+.qa-item span{ display:block; font-size:9.5pt; line-height:1.55; color:var(--ink-2); }
+.qa-item span::before{ content:"A "; font-family:var(--serif); color:var(--rose-deep); }
+
+/* v3.1：ol.steps 去掉 ol 默认编号（编号由 print.css 的 counter 出） */
+ol.steps{ list-style:none; margin:0; padding:0; }
+/* v3.1 微调：紧凑变体（只在需要塞下的页用） */
+.table.table--tight th,.table.table--tight td{ padding:.3em .6em; font-size:.84em; line-height:1.5; }
+ol.steps--tight li{ padding:1.1mm 0; font-size:13pt; line-height:1.5; }
+.qa.qa--tight .qa-item{ padding:1.2mm 0; }
+.qa.qa--tight .qa-item q{ font-size:9.5pt; margin-bottom:.5mm; }
+.qa.qa--tight .qa-item span{ font-size:9pt; }
+.own{ margin-bottom:.25em; }
+
+/* ---------------------------------------------------------------------------
+   v3.2 追加：项目总览页 · 三张项目卡（卡片撑满内容区剩余高度）
+   --------------------------------------------------------------------------- */
+.pcards{ display:grid; grid-template-columns:repeat(3,1fr); gap:6mm; flex:1; margin-top:1mm; }
+.pcard{
+  display:flex; flex-direction:column; height:100%; min-height:0; text-align:center;
+  border:1px solid var(--line-soft); border-radius:4px; background:var(--card);
+  padding:7mm 6.5mm 6mm;
+}
+.pcard-glyph{ height:15mm; display:flex; align-items:center; justify-content:center; }
+.pcard-glyph .glyph{ transform:scale(1.4); }
+.pcard .pcard-name{ margin:2mm 0 0; font-size:20pt; line-height:1.25; }
+.pcard .pcard-meta{ margin:1.8mm 0 0; font-size:11pt; line-height:1.5; letter-spacing:.06em; color:var(--ink-3); }
+.pcard .pcard-what{ margin:auto 0 0; font-size:13pt; line-height:1.75; color:var(--ink-2); }
+.pcard .pcard-role{
+  margin:auto 0 0; padding-top:3mm; border-top:1px solid var(--line-soft);
+  font-size:11pt; line-height:1.65; color:var(--ink-2);
+}
+.pcard .pcard-role b{ display:block; font-family:var(--serif); font-weight:400; color:var(--rose-deep); margin:0 0 .9mm; }
+
+/* v3.6 · 用户删减后的版式补丁（2026-10-18） */
+.mock--plain .mock-body{ gap:0; }
+.mock--plain .mock-cards{ gap:3mm; }
+.mock--plain .mock-card{ min-height:15mm; display:flex; align-items:center; justify-content:center; }
+.mock-card--skeleton{ display:block; height:2.4mm; width:62%; border-radius:999px; background:var(--line-soft); }
+.mock--plain .mock-chip{ min-width:17mm; height:5.2mm; padding:0; }
+.mock--plain .mock-row{ padding:2.8mm 0; }
+.end-label{ margin-top:15mm; font-size:9.5pt; letter-spacing:.34em; color:var(--ink-3); }
+
+.slide--p6 .two-col{ flex:1; align-items:center; }
+.slide--p6 .funnel{ gap:.72em; }
+.slide--p6 .funnel .track{ height:2.1em; }
+.slide--p6 .list li{ padding:2.9mm 0; }
+.slide--p6 .rate b{ font-size:1.62em; }
+.slide--p6 .rate span{ font-size:.8em; }
+.slide--p6 .small{ margin-top:6mm !important; }
+
+.slide--p7 .tr-card{ padding:4.2mm 3.8mm; font-size:10.5pt; line-height:1.75; }
+.slide--p7 .table--tight td{ padding:2.6mm .7em; font-size:9.6pt; }
+.slide--p7 .table--tight th{ padding:1.4mm .7em; }
+
+.slide--p8 .role{ padding:.7em .8em; }
+.slide--p8 .shot{ height:26mm; }
+.slide--p8 .io-panel{ padding:3.6mm 3.4mm; }
+.slide--p8 .doc{ padding:4mm 3mm; }
+.slide--p8 .doc-row{ padding:2.2mm 0; }
+
+.slide--p10 .two-col{ flex:1; align-items:center; }
+.slide--p10 .light{ padding-top:3.2mm; }
+.slide--p10 .light b{ margin-bottom:1.4mm; }
+.slide--p10 .light p{ line-height:1.65; }
+.slide--p10 .vs{ margin-top:8mm !important; }
+
+.slide--p13 .matrix td{ padding:1.7mm 2mm; }
+.slide--p13 .matrix th{ padding:1.4mm 2mm; }
+.slide--p13 .vs-panel{ padding:1.1em 1em; }
+
+.end-block{ margin:auto 0; }
+.end-block h2{ margin-top:0; font-size:34pt; letter-spacing:.22em; }
+.end-block .end-label{ margin-top:14mm; }
+
+.real-shot-cap{ font-size:8.5pt; letter-spacing:.04em; color:var(--ink-3); padding:0 0 2mm; }
+.real-shot-box{ width:100%; height:116mm; border:1px solid var(--line-soft); border-radius:3px; background:var(--card); overflow:hidden; }
+.real-shot-box img{ display:block; width:100%; height:100%; object-fit:cover; }
+.io-shot,.io-doc{ display:block; width:100%; height:auto; border:1px solid var(--line-soft); border-radius:2px; background:#fff; }
+
+/* v3.10 · 页 08 四框 2×2 ＋ 页 09 折返箭头（2026-10-18） */
+.slide--p8 .role-grid{ grid-template-columns:repeat(2,1fr); gap:2mm 3mm; margin-top:2mm !important; }
+.slide--p8 .role{ padding:.65em .8em; }
+.slide--p8 .role b{ font-size:.95em; margin-bottom:.2em; }
+.slide--p8 .role span{ font-size:.74em; line-height:1.55; }
+.slide--p8 .io{ grid-template-columns:1fr 9mm 1.08fr; }
+.slide--p8 .io-panel{ padding:2.2mm 2.6mm; }
+.slide--p8 .io-panel h4{ margin-bottom:1.2mm; font-size:10pt; }
+.flow-down--right{ text-align:right; padding-right:8.5%; }

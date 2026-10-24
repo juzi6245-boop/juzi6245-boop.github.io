@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="项目一 · 招标标讯监控台：自动抓取、金额解析、业务筛选、去重入库、看板与提醒。">
+<title>项目一 · 招标标讯监控台 ｜ 李怡萱 · 作品集</title>
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/site.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body data-page="project-1">
+<a class="skip-link" href="#main">跳到正文</a>
+
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="brand" href="index.html" aria-label="李怡萱作品集首页">
+      <span class="brand-name">李怡萱</span>
+      <span class="brand-meta">Portfolio · 2026</span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="index.html" data-page="home">首页</a>
+      <a href="project-1.html" data-page="project-1" aria-current="page">项目一</a>
+      <a href="project-2.html" data-page="project-2">项目二</a>
+      <a href="skills.html" data-page="skills">能力</a>
+      <a href="about.html" data-page="about">关于</a>
+    </nav>
+    <a class="header-action" href="portfolio.pdf" target="_blank" rel="noopener">
+      PDF 版
+      <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" stroke="currentColor" stroke-width="1.2"/></svg>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="shell page-hero__inner">
+      <p class="page-no">01</p>
+      <div>
+        <p class="eyebrow">Project 01 · Live web app · 2026.07</p>
+        <h1>招标标讯监控台</h1>
+        <p class="lead">把人工逐个翻查公开招标网站，做成一条自动抓取、解析、筛选、去重与看板提醒的链路；上线后由 2 名检索同事日常使用。</p>
+      </div>
+      <dl class="page-aside">
+        <div><dt>形态</dt><dd>扣子云 Web Coding · Web 看板</dd></div>
+        <div><dt>上线</dt><dd>2026.07；离职后仍在运行</dd></div>
+        <div><dt>本人负责</dt><dd>需求、筛选口径、金额规则、验收标准</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="p1-context">
+    <div class="shell">
+      <div class="section-head reveal">
+        <p class="section-no">01 / 05</p>
+        <h2 id="p1-context">背景与角色</h2>
+        <p class="section-note">先把问题说清楚：谁在做、每天花多久、漏掉一次会怎样。</p>
+      </div>
+      <div class="split">
+        <dl class="fact-list reveal">
+          <div class="fact-row"><dt>方式</dt><dd>检索岗 3 人轮值，负责一个公开招标站点，方式为人工逐个翻查。</dd></div>
+          <div class="fact-row"><dt>成本</dt><dd>合计约 3 小时/天；人工时段为 09:00–10:00、13:00–14:00、16:00–17:00。</dd></div>
+          <div class="fact-row"><dt>风险</dt><dd>上线前发生过漏标与错过报名，后果是项目无法投，错失机会。</dd></div>
+          <div class="fact-row"><dt>上线后</dt><dd>自动抓取与筛选接替重复翻查；未再出现因未及时看到公告而错过报名的情况。</dd></div>
+        </dl>
+        <div class="stack-lg reveal" style="--delay:100ms">
+          <p class="lead">系统每小时整点自动跑；检索同事只看筛出的结果，并在发现列表不对时手动抽查。</p>
+          <div class="daymap">
+            <div class="daymap-head"><h3>人工与系统的分工</h3><span>00:00 — 24:00</span></div>
+            <div class="day-scale"><span>00</span><span>06</span><span>12</span><span>18</span><span>24</span></div>
+            <div class="day-row"><label>人工</label><div class="day-track"><span class="manual-seg s1"></span><span class="manual-seg s2"></span><span class="manual-seg s3"></span></div></div>
+            <div class="day-row"><label>系统</label><div class="day-track day-track--system"><span class="spot"></span></div></div>
+            <p class="day-caption"><span>人工分 3 段翻查，合计约 3 小时/天</span><span>整点自动跑 ＋ 人工抽查</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="role-grid">
+        <article class="role-card reveal"><p class="role-no">01</p><h3>业务问题</h3><p>由一线检索工作发现，非技术侧提出。</p></article>
+        <article class="role-card reveal" style="--delay:60ms"><p class="role-no">02</p><h3>需求与口径</h3><p>筛选口径、金额规则、验收标准由本人定义。</p></article>
+        <article class="role-card reveal" style="--delay:120ms"><p class="role-no">03</p><h3>代码</h3><p>由扣子云 Web Coding 按需求生成。</p></article>
+        <article class="role-card reveal" style="--delay:180ms"><p class="role-no">04</p><h3>验证与迭代</h3><p>提需求、跑验证、报问题、定规则；产出 38 个业务文件、7,870 行业务代码。</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tint" aria-labelledby="p1-chain">
+    <div class="shell">
+      <div class="section-head reveal">
+        <p class="section-no">02 / 05</p>
+        <h2 id="p1-chain">数据链路</h2>
+        <p class="section-note">直连接口，不解析页面；筛选、去重、存储和展示各有明确职责。</p>
+      </div>
+      <figure class="figure reveal">
+        <img src="assets/img/diagram-project1.webp" alt="招标标讯监控台架构图：数据源、采集、金额解析、筛选、去重入库、看板与提醒">
+        <figcaption><span>数据源 → 采集 → 金额解析 → 筛选 → 去重入库 → 看板 → 提醒</span><span>七段链路</span></figcaption>
+      </figure>
+      <div class="split" style="margin-top:28px">
+        <dl class="fact-list reveal">
+          <div class="fact-row"><dt>采集</dt><dd>直连公开接口（不解析页面）；3 次重试 ＋ 20 秒超时 ＋ 请求间隔 1~2 秒；每小时整点自动跑。</dd></div>
+          <div class="fact-row"><dt>筛选</dt><dd>五大战区 ＋ 省份金额阈值 ＋ 城市到省份的映射表。</dd></div>
+          <div class="fact-row"><dt>去重</dt><dd>按来源唯一 ID 幂等写入，同批重跑不新增。</dd></div>
+          <div class="fact-row"><dt>存储</dt><dd>6 张表、16 个接口；38 个业务文件、7,870 行业务代码；抓取进度用 SSE 流式返回。</dd></div>
+        </dl>
+        <div class="reveal" style="--delay:100ms">
+          <p class="kicker">Amount extraction</p>
+          <h3 style="margin-top:10px;font-size:26px">金额提取：四层兜底</h3>
+          <ol class="kb-list" style="margin-top:20px">
+            <li>接口 budget 字段</li>
+            <li>文本正则：全角转半角、中文大写金额、预算关键词</li>
+            <li>详情页表格</li>
+            <li>大模型语义</li>
+          </ol>
+          <p class="body-copy" style="margin-top:22px">金额提取存在不确定性，因此金额只用于展示；筛选门槛只在预算字段可读时生效。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="p1-video">
+    <div class="shell">
+      <div class="section-head reveal">
+        <p class="section-no">03 / 05</p>
+        <h2 id="p1-video">从抓取到筛选结果回看</h2>
+        <p class="section-note">1 分 43 秒录屏：抓取、筛选、跳转原公告、跟踪看板。</p>
+      </div>
+      <figure class="video-figure reveal" data-video="assets/video/project-1-demo.mp4">
+        <div class="video-frame">
+          <video controls preload="none" hidden playsinline poster="assets/img/poster-project-1.jpg" width="1836" height="936"></video>
+          <div class="video-fallback">
+            <div class="video-ring" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><path d="M7 5l8 5-8 5V5Z" stroke="currentColor" stroke-width="1.2"/></svg></div>
+            <h3>招标标讯监控台 · 功能演示</h3>
+            <p>1 分 43 秒 · 原画 1836×936 · 点击播放。</p>
+            <button class="btn btn--line" type="button">播放演示</button>
+          </div>
+        </div>
+        <figcaption><span>演示录屏：从批次抓取到筛选结果回看。</span><span>01:43 · 1836×936</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section section--tint" aria-labelledby="p1-results">
+    <div class="shell">
+      <div class="section-head reveal">
+        <p class="section-no">04 / 05</p>
+        <h2 id="p1-results">结果与口径</h2>
+        <p class="section-note">数字按同一轮统计；三个率的分母不同，不互相换算。</p>
+      </div>
+      <div class="funnel reveal">
+        <div class="funnel-step"><b>9,185</b><span>抓回原始标讯</span></div>
+        <span class="funnel-arrow" aria-hidden="true">→</span>
+        <div class="funnel-step"><b>清洗去重</b><span>按来源唯一 ID 入库</span></div>
+        <span class="funnel-arrow" aria-hidden="true">→</span>
+        <div class="funnel-step"><b>192</b><span>按业务口径筛出</span></div>
+      </div>
+      <div class="stat-band" style="margin-top:30px">
+        <div class="stat reveal"><b>59</b><span>本周新增项目</span></div>
+        <div class="stat reveal" style="--delay:60ms"><b>1.78 亿</b><span>本周公告金额合计（只累加有值的行）</span></div>
+        <div class="stat reveal" style="--delay:120ms"><b>2 · 2</b><span>账号 · 日常使用的检索同事</span></div>
+        <div class="stat reveal" style="--delay:180ms"><b>600~800</b><span>人时/年</span></div>
+      </div>
+      <div class="rate-grid">
+        <article class="rate-card reveal"><b>92%</b><h3>精确率</h3><p>分母是全表 100 条，不是抽样；误筛的 14 条主要为服务类与废标公示。</p></article>
+        <article class="rate-card reveal" style="--delay:70ms"><b>≈100%</b><h3>召回率</h3><p>多日抽样结果，不代表全量；用于观察漏标风险。</p></article>
+        <article class="rate-card reveal" style="--delay:140ms"><b>84%</b><h3>金额提取准确率</h3><p>26 ÷ 31；69 条「金额待确认」不进分母。</p></article>
+      </div>
+      <p class="rate-note reveal">口径写在同一页：92% 的分母是全表 100 条，不是抽样；召回 ≈100% 是多日抽样结果；金额准确率的分母只含已确认的 31 条。</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="p1-tradeoff">
+    <div class="shell">
+      <div class="section-head reveal">
+        <p class="section-no">05 / 05</p>
+        <h2 id="p1-tradeoff">取舍与故障</h2>
+        <p class="section-note">金额门槛不替代召回判断；线上出现过的故障单独记录。</p>
+      </div>
+      <div class="decision reveal">
+        <div class="decision-panel decision-panel--muted">
+          <h3>如果只按金额严格筛</h3>
+          <p>读不到预算的行会被直接排除；其中一旦有可投项目，就是漏标。漏标的代价高于多几条待确认。</p>
+        </div>
+        <div class="decision-arrow" aria-hidden="true"><span>→</span></div>
+        <div class="decision-panel">
+          <h3>现在的做法</h3>
+          <p>读得到预算时，按南部 200 万、广州惠州 100 万、其余 900 万过门槛；读不到时标「金额待确认」入库，不按金额拦。取舍是召回优先。</p>
+        </div>
+      </div>
+      <div class="fault-table reveal" style="--delay:80ms">
+        <div class="fault-row fault-row--head"><p>线上现象</p><p>处理方式</p></div>
+        <div class="fault-row"><p>预算编制类公告被当成可投项目，误筛进看板</p><p>服务类关键词剔除，但标题含「施工」保留；结果保留人工复核。</p></div>
+        <div class="fault-row"><p>地区字段给的是城市名，匹配失败</p><p>补城市到省份映射与归一化。</p></div>
+        <div class="fault-row"><p>登录超过有效期后，接口连续返回 401，看板取不到数据</p><p>到期前 10 秒用 refresh token 换新；遇到 401 先刷新再重发一次。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <nav class="pager" aria-label="板块切换">
+    <div class="shell pager-grid">
+      <a class="pager-link prev" href="index.html"><span class="dir">← 上一板块</span><span class="t">首页 · 五个板块</span></a>
+      <a class="pager-link next" href="project-2.html"><span class="dir">下一板块 →</span><span class="t">项目二 · 报名资料自动生成</span></a>
+    </div>
+  </nav>
+</main>
+
+<footer class="site-footer">
+  <div class="shell footer-inner">
+    <div>
+      <p>李怡萱 · 作品集 · 2026</p>
+      <p>AI 生成部分已注明；需求、口径、验证、验收由本人负责。</p>
+    </div>
+    <div class="footer-links">
+      <a href="portfolio.pdf" target="_blank" rel="noopener">PDF 版</a>
+      <a href="mailto:911388766@qq.com">911388766@qq.com</a>
+      <a href="tel:19250468794">19250468794</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>

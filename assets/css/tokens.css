@@ -1,0 +1,22 @@
+/* tokens.css · 设计令牌（打印层与网页层共用一份）-------------------------------
+   极简文艺风：米白 / 奶咖底 ＋ 雾玫瑰点缀 ＋ 深炭灰正文（不用纯黑）
+   零外部依赖：无外部字体、无外部图片、无 CDN
+   ------------------------------------------------------------------------- */
+:root{
+  --paper:#F7F4F0;
+  --paper-2:#EFE8E1;
+  --card:#FFFDFB;
+  --ink:#2E2A28;
+  --ink-2:#57504A;
+  --ink-3:#8C837B;
+  --rose:#C2989F;          /* 灰粉 · 雾玫瑰 —— 全站唯一主色 */
+  --rose-deep:#A3787F;
+  --rose-soft:#EAD9DC;
+  --rose-tint:rgba(194,152,159,.12);
+  --sage:rgba(185,191,178,.65);
+  --line:rgba(46,42,40,.16);
+  --line-soft:rgba(46,42,40,.07);
+  --serif:Georgia,"Times New Roman","Songti SC","SimSun",serif;
+  --sans:"PingFang SC","Microsoft YaHei","Noto Sans SC","Hiragino Sans GB",sans-serif;
+  --noise:none;
+}
