@@ -49,12 +49,25 @@
     </div>
   </section>
 
+  <nav class="section-toc" aria-label="本页目录">
+    <div class="shell section-toc__inner">
+      <p class="section-toc__label">本页目录</p>
+      <ol>
+        <li><a href="#p1-context"><span>01</span>背景与角色</a></li>
+        <li><a href="#p1-chain"><span>02</span>数据链路</a></li>
+        <li><a href="#p1-video"><span>03</span>演示视频</a></li>
+        <li><a href="#p1-results"><span>04</span>结果与口径</a></li>
+        <li><a href="#p1-tradeoff"><span>05</span>取舍与故障</a></li>
+      </ol>
+    </div>
+    <span class="section-toc__progress" aria-hidden="true"></span>
+  </nav>
+
   <section class="section" aria-labelledby="p1-context">
     <div class="shell">
-      <div class="section-head reveal">
+      <div class="section-head section-head--compact reveal">
         <p class="section-no">01 / 05</p>
         <h2 id="p1-context">背景与角色</h2>
-        <p class="section-note">先把问题说清楚：谁在做、每天花多久、漏掉一次会怎样。</p>
       </div>
       <div class="split">
         <dl class="fact-list reveal">
@@ -169,10 +182,9 @@
 
   <section class="section" aria-labelledby="p1-tradeoff">
     <div class="shell">
-      <div class="section-head reveal">
+      <div class="section-head section-head--compact reveal">
         <p class="section-no">05 / 05</p>
         <h2 id="p1-tradeoff">取舍与故障</h2>
-        <p class="section-note">金额门槛不替代召回判断；线上出现过的故障单独记录。</p>
       </div>
       <div class="decision reveal">
         <div class="decision-panel decision-panel--muted">
